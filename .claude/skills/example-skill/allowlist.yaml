@@ -1,0 +1,4 @@
+# Which agents may use this skill
+agents:
+  - orchestrator
+  - "*"  # or use wildcard

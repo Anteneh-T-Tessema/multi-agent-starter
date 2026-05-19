@@ -1,0 +1,18 @@
+# Single source of truth for all agent tools
+tools:
+  - name: vector_search
+    type: mcp
+    server: vector-store
+    inputs: [query, top_k]
+    outputs: [documents, scores]
+
+  - name: web_search
+    type: mcp
+    server: web-search
+    inputs: [query]
+    outputs: [results]
+
+  - name: write_memory
+    type: local
+    inputs: [key, value, tier]
+    outputs: [success]

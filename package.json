@@ -1,0 +1,22 @@
+{
+  "name": "multi-agent-starter",
+  "version": "0.1.0",
+  "description": "GitHub starter template for multi-agent systems with Agentic RAG, orchestration, memory, guardrails, and observability.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "orchestrate": "node src/orchestration/index.js",
+    "evals": "node agent_skills/evals/run.js",
+    "evals:skill": "node agent_skills/evals/per_skill/run.js",
+    "observe": "node src/observability/dashboard.js",
+    "test": "jest --passWithNoTests"
+  },
+  "keywords": ["multi-agent", "agentic-rag", "llm", "orchestration", "claude"],
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.52.0",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}

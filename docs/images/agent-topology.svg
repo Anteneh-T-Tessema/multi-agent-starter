@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500"
+     font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif">
+  <defs>
+    <filter id="sh">
+      <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#000" flood-opacity="0.10"/>
+    </filter>
+    <filter id="glow">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#8b5cf6" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="500" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="350" y="28" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a">Agent Topology</text>
+  <text x="350" y="46" text-anchor="middle" font-size="12" fill="#64748b">Orchestrator coordinates all subagents · defined in .claude/agents/</text>
+
+  <!-- ── Connection lines (behind nodes) ── -->
+  <!-- Orchestrator (350,248) to Guard Agent (350, 92) -->
+  <line x1="350" y1="226" x2="350" y2="119" stroke="#a78bfa" stroke-width="2" stroke-dasharray="6,3" opacity="0.6"/>
+  <!-- Orchestrator to RAG Agent (530, 248) -->
+  <line x1="376" y1="248" x2="503" y2="248" stroke="#a78bfa" stroke-width="2" stroke-dasharray="6,3" opacity="0.6"/>
+  <!-- Orchestrator to Tool Agent (350, 404) -->
+  <line x1="350" y1="270" x2="350" y2="377" stroke="#a78bfa" stroke-width="2" stroke-dasharray="6,3" opacity="0.6"/>
+  <!-- Orchestrator to Memory Agent (170, 248) -->
+  <line x1="324" y1="248" x2="197" y2="248" stroke="#a78bfa" stroke-width="2" stroke-dasharray="6,3" opacity="0.6"/>
+
+  <!-- ── Guard Agent (top) ── -->
+  <rect x="288" y="80" width="124" height="54" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="2" filter="url(#sh)"/>
+  <text x="350" y="102" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="700" fill="#92400e">Guard</text>
+  <text x="350" y="119" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#b45309">Agent</text>
+  <!-- Guard description -->
+  <text x="350" y="148" text-anchor="middle" font-size="10" fill="#64748b">Validates all I/O</text>
+  <text x="350" y="162" text-anchor="middle" font-size="10" fill="#64748b">PII · Rate limit · Safety</text>
+
+  <!-- ── RAG Agent (right) ── -->
+  <rect x="503" y="221" width="124" height="54" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" filter="url(#sh)"/>
+  <text x="565" y="243" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="700" fill="#1e3a8a">RAG</text>
+  <text x="565" y="259" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#1d4ed8">Agent</text>
+  <!-- RAG description -->
+  <text x="565" y="288" text-anchor="middle" font-size="10" fill="#64748b">Retrieves context</text>
+  <text x="565" y="302" text-anchor="middle" font-size="10" fill="#64748b">Vector DB · Web · APIs</text>
+
+  <!-- ── Tool Agent (bottom) ── -->
+  <rect x="288" y="377" width="124" height="54" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="2" filter="url(#sh)"/>
+  <text x="350" y="399" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="700" fill="#064e3b">Tool</text>
+  <text x="350" y="415" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#047857">Agent</text>
+  <!-- Tool description -->
+  <text x="350" y="444" text-anchor="middle" font-size="10" fill="#64748b">Executes MCP tools</text>
+  <text x="350" y="458" text-anchor="middle" font-size="10" fill="#64748b">registry.yaml · Sandboxed</text>
+
+  <!-- ── Memory Agent (left) ── -->
+  <rect x="73" y="221" width="124" height="54" rx="10" fill="#fdf4ff" stroke="#c026d3" stroke-width="2" filter="url(#sh)"/>
+  <text x="135" y="243" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="700" fill="#701a75">Memory</text>
+  <text x="135" y="259" text-anchor="middle" dominant-baseline="central" font-size="11" fill="#a21caf">Agent</text>
+  <!-- Memory description -->
+  <text x="135" y="288" text-anchor="middle" font-size="10" fill="#64748b">3-tier context store</text>
+  <text x="135" y="302" text-anchor="middle" font-size="10" fill="#64748b">Short · Mid · Long-term</text>
+
+  <!-- ── Orchestrator (center) ── -->
+  <rect x="286" y="214" width="128" height="68" rx="14" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2.5" filter="url(#glow)"/>
+  <text x="350" y="241" text-anchor="middle" dominant-baseline="central" font-size="13" font-weight="700" fill="#4c1d95">Orchestrator</text>
+  <text x="350" y="258" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#6d28d9">Decomposes tasks</text>
+  <text x="350" y="272" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#6d28d9">Routes to agents</text>
+
+  <!-- ── Legend ── -->
+  <rect x="28" y="468" width="644" height="22" rx="6" fill="#f1f5f9"/>
+  <line x1="48" y1="479" x2="78" y2="479" stroke="#a78bfa" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="84" y="479" dominant-baseline="central" font-size="10" fill="#64748b">Agent communication channel (structured JSON messages with traceId)</text>
+  <circle cx="490" cy="479" r="5" fill="#8b5cf6"/>
+  <text x="500" y="479" dominant-baseline="central" font-size="10" fill="#64748b">Defined in .claude/agents/*.md</text>
+</svg>

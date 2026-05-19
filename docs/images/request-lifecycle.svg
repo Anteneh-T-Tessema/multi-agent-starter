@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 210"
+     font-family="system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L9,3.5 L0,7 Z" fill="#94a3b8"/>
+    </marker>
+    <filter id="sh">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="210" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="430" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="#0f172a">Request Lifecycle</text>
+  <text x="430" y="44" text-anchor="middle" font-size="11" fill="#64748b">Every request passes through all six stages in order</text>
+
+  <!-- ── Step circles (above nodes) ── -->
+  <!-- Step 1 -->
+  <circle cx="95"  cy="72" r="14" fill="#6366f1" filter="url(#sh)"/>
+  <text x="95"  y="72" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="700" fill="white">1</text>
+  <!-- Step 2 -->
+  <circle cx="225" cy="72" r="14" fill="#f59e0b" filter="url(#sh)"/>
+  <text x="225" y="72" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="700" fill="white">2</text>
+  <!-- Step 3 -->
+  <circle cx="355" cy="72" r="14" fill="#8b5cf6" filter="url(#sh)"/>
+  <text x="355" y="72" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="700" fill="white">3</text>
+  <!-- Step 4 -->
+  <circle cx="485" cy="72" r="14" fill="#3b82f6" filter="url(#sh)"/>
+  <text x="485" y="72" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="700" fill="white">4</text>
+  <!-- Step 5 -->
+  <circle cx="615" cy="72" r="14" fill="#f59e0b" filter="url(#sh)"/>
+  <text x="615" y="72" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="700" fill="white">5</text>
+  <!-- Step 6 -->
+  <circle cx="745" cy="72" r="14" fill="#10b981" filter="url(#sh)"/>
+  <text x="745" y="72" text-anchor="middle" dominant-baseline="central" font-size="11" font-weight="700" fill="white">6</text>
+
+  <!-- ── Node boxes ── -->
+  <!-- Node 1: User -->
+  <rect x="35"  y="92" width="120" height="52" rx="10" fill="#eef2ff" stroke="#6366f1" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="95"  y="113" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="700" fill="#4338ca">User</text>
+  <text x="95"  y="129" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#6366f1">Sends query</text>
+
+  <!-- Node 2: Guard Input -->
+  <rect x="165" y="92" width="120" height="52" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="225" y="113" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="700" fill="#92400e">Guard In</text>
+  <text x="225" y="129" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#b45309">Validate + PII</text>
+
+  <!-- Node 3: Orchestrate -->
+  <rect x="295" y="92" width="120" height="52" rx="10" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="355" y="113" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="700" fill="#4c1d95">Orchestrate</text>
+  <text x="355" y="129" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#6d28d9">Decompose + Route</text>
+
+  <!-- Node 4: Agents -->
+  <rect x="425" y="92" width="120" height="52" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="485" y="113" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="700" fill="#1e3a8a">Agents</text>
+  <text x="485" y="129" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#1d4ed8">RAG · Tool · Memory</text>
+
+  <!-- Node 5: Guard Output -->
+  <rect x="555" y="92" width="120" height="52" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="615" y="113" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="700" fill="#92400e">Guard Out</text>
+  <text x="615" y="129" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#b45309">Sanitize + Filter</text>
+
+  <!-- Node 6: Response -->
+  <rect x="685" y="92" width="120" height="52" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="745" y="113" text-anchor="middle" dominant-baseline="central" font-size="12" font-weight="700" fill="#064e3b">Response</text>
+  <text x="745" y="129" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#047857">Delivered to user</text>
+
+  <!-- ── Connecting arrows ── -->
+  <line x1="155" y1="118" x2="165" y2="118" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="285" y1="118" x2="295" y2="118" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="415" y1="118" x2="425" y2="118" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="545" y1="118" x2="555" y2="118" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="675" y1="118" x2="685" y2="118" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── Step connection lines (from circles to boxes) ── -->
+  <line x1="95"  y1="86" x2="95"  y2="92" stroke="#6366f1" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+  <line x1="225" y1="86" x2="225" y2="92" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+  <line x1="355" y1="86" x2="355" y2="92" stroke="#8b5cf6" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+  <line x1="485" y1="86" x2="485" y2="92" stroke="#3b82f6" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+  <line x1="615" y1="86" x2="615" y2="92" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+  <line x1="745" y1="86" x2="745" y2="92" stroke="#10b981" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+
+  <!-- ── Description lines below boxes ── -->
+  <text x="95"  y="160" text-anchor="middle" font-size="10" fill="#64748b">userId, query</text>
+  <text x="225" y="160" text-anchor="middle" font-size="10" fill="#64748b">guardInput(req)</text>
+  <text x="355" y="160" text-anchor="middle" font-size="10" fill="#64748b">decompose(safe)</text>
+  <text x="485" y="160" text-anchor="middle" font-size="10" fill="#64748b">executePlan(plan)</text>
+  <text x="615" y="160" text-anchor="middle" font-size="10" fill="#64748b">guardOutput(res)</text>
+  <text x="745" y="160" text-anchor="middle" font-size="10" fill="#64748b">{ results, traceId }</text>
+
+  <!-- ── Trace ID bar at bottom ── -->
+  <rect x="35" y="176" width="790" height="22" rx="6" fill="#f1f5f9"/>
+  <text x="430" y="187" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#64748b">Single <tspan font-weight="600">traceId</tspan> threads through all 6 stages — visible in <tspan font-weight="600">src/observability/</tspan></text>
+</svg>

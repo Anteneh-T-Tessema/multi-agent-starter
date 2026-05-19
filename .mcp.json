@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "vector-store": {
+      "type": "url",
+      "url": "http://localhost:6333/mcp",
+      "description": "Qdrant vector store — long-term memory + RAG"
+    },
+    "web-search": {
+      "type": "url",
+      "url": "http://localhost:3200/mcp",
+      "description": "Web search fallback for RAG agent"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(python src/*)",
+      "Bash(node src/*)",
+      "Read(**)",
+      "Write(src/**)",
+      "Write(agent_skills/**)",
+      "Write(.claude/**)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Write(.env*)",
+      "Write(secrets/**)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      { "matcher": "Bash", "hooks": [{ "type": "command", "command": "node .claude/hooks/pre-tool-validate.js" }] }
+    ],
+    "PostToolUse": [
+      { "matcher": "*", "hooks": [{ "type": "command", "command": "node .claude/hooks/post-tool-log.js" }] }
+    ],
+    "SessionStart": [{ "type": "command", "command": "node .claude/hooks/session-start.js" }],
+    "SessionEnd":   [{ "type": "command", "command": "node .claude/hooks/session-end.js" }],
+    "Stop":         [{ "type": "command", "command": "node .claude/hooks/on-stop.js" }]
+  },
+  "env": {
+    "AGENT_LOG_LEVEL": "info",
+    "TRACE_ENABLED": "true"
+  }
+}

@@ -1,0 +1,13 @@
+node_modules/
+.env
+.env.*
+CLAUDE.local.md
+dist/
+*.log
+__pycache__/
+*.pyc
+.DS_Store
+agent_skills/memory/working/*
+agent_skills/memory/episodic/*
+!agent_skills/memory/working/.gitkeep
+!agent_skills/memory/episodic/.gitkeep
